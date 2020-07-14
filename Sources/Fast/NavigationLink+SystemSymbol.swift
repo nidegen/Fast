@@ -1,5 +1,5 @@
 //
-//  NavigationLink+SystemItem.swift
+//  NavigationLink+SystemSymbol.swift
 //  Fast
 //
 //  Created by Nicolas Degen on 23.06.20.
