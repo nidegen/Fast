@@ -13,15 +13,15 @@ extension View {
     self.modifier(NavigatingModifier(isActive: isActive, destination: destination))
   }
   
-//  public func navigating<Item, Content>(item: Binding<Item?>, @ViewBuilder content: @escaping (Item) -> Content) -> some View where Item : Identifiable, Content : View {
-//    
-//  }
+  public func navigating<Item, Destination>(item: Binding<Item?>, destination: Destination) -> some View where Item : Identifiable, Destination: View {
+    self.modifier(NavigatingItemModifier(item: item, destination: destination))
+  }
 }
 
 public struct NavigatingItemModifier<Destination, Item> : ViewModifier where Destination: View, Item : Identifiable {
   @Binding var item: Item?
   
-  var destination: ((Item) -> Content)
+  var destination: Destination
   
   var isActive: Binding<Bool> {
     Binding<Bool>(get: {
@@ -33,8 +33,8 @@ public struct NavigatingItemModifier<Destination, Item> : ViewModifier where Des
   
   public func body(content: Content) -> some View {
     ZStack() {
-      item.map {
-        NavigationLink(destination: destination($0), isActive: isActive) {
+      if item != nil {
+        NavigationLink(destination: destination, isActive: isActive) {
           EmptyView()
         }
       }
