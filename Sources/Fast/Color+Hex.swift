@@ -23,4 +23,11 @@ public extension Color {
       opacity: alpha
     )
   }
+  
+  static var teal: Color {
+    Color(UIColor.systemTeal)
+  }
+  static var indigo: Color {
+    Color(UIColor.systemIndigo)
+  }
 }

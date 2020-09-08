@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-
+@available(iOS 13.0, *)
 public class ActionData: Identifiable  {
   public init(title: String, message: String? = nil, buttons: [ActionSheet.Button]) {
     self.title = title

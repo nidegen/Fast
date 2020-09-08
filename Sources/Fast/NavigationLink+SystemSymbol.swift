@@ -8,10 +8,11 @@
 
 import SwiftUI
 
+@available(iOS 13.0, macOS 11.0, tvOS 13.0, watchOS 6.0, *)
 extension NavigationLink where Label == Image {
-  public init(systemName: String, destination: Destination) {
+  public init(systemSymbol: String, destination: Destination) {
     self.init(destination: destination) {
-      Image(systemName: systemName)
+      Image(systemName: systemSymbol)
     }
   }
 }

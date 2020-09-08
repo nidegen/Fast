@@ -8,10 +8,11 @@
 
 import SwiftUI
 
+@available(iOS 13.0, macOS 11.0, tvOS 13.0, watchOS 6.0, *)
 extension Button where Label == Image {
-  public init(systemName: String, action: @escaping ()->()) {
+  public init(systemSymbol: String, action: @escaping ()->()) {
     self.init(action: action) {
-      Image(systemName: systemName)
+      Image(systemName: systemSymbol)
     }
   }
 }
