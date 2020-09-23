@@ -47,6 +47,7 @@ public struct ImagePicker: View {
   }
 }
 
+@available(iOS 13.0, macOS 11.0, tvOS 13.0, watchOS 6.0, macCatalyst 14, *)
 struct ImagePicker_Previews: PreviewProvider {
   @State static var image: UIImage?
   static var previews: some View {

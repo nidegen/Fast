@@ -10,7 +10,7 @@ import PhotosUI
 import SwiftUI
 
 #if canImport(UIKit)
-@available(iOS 14.0, *)
+@available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, macCatalyst 14, *)
 struct PHPicker: UIViewControllerRepresentable {
   let configuration: PHPickerConfiguration
   @Binding var isPresented: Bool
