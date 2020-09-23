@@ -8,6 +8,9 @@
 
 import SwiftUI
 
+#if canImport(UIKit)
+
+@available(iOS 13.0, macOS 11.0, tvOS 13.0, watchOS 6.0, macCatalyst 14, *)
 public struct ImagePicker: View {
   @Binding var image: UIImage?
   @State var isPresentingImagePicker = false
@@ -50,3 +53,5 @@ struct ImagePicker_Previews: PreviewProvider {
     ImagePicker(image: $image, onSelection: {_ in print("Image picked")})
   }
 }
+
+#endif

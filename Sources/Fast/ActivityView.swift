@@ -7,9 +7,13 @@
 //
 
 import Foundation
-import UIKit
+#if canImport(UIKit)
+  import UIKit
+#endif
 import SwiftUI
 
+
+#if canImport(UIKit)
 struct ActivityView: UIViewControllerRepresentable {
   var activityItems: [Any]
   var applicationActivities: [UIActivity]? = nil
@@ -22,3 +26,4 @@ struct ActivityView: UIViewControllerRepresentable {
   func updateUIViewController(_ uiViewController: UIActivityViewController, context: UIViewControllerRepresentableContext<ActivityView>) {}
   
 }
+#endif

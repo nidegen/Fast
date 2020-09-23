@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+#if os(iOS) // use available if compiling for macOS 11
 public struct CancelableView<Content> : View where Content : View {
   let content: () -> Content
   
@@ -44,3 +45,4 @@ public struct CancelableModifier: ViewModifier {
     }
   }
 }
+#endif

@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+#if canImport(UIKit)
 struct UIImagePickerWrapper: UIViewControllerRepresentable {
   @Binding var isShowing: Bool
   @Binding var image: UIImage?
@@ -56,3 +57,4 @@ struct UIImagePickerWrapper_Previews: PreviewProvider {
     UIImagePickerWrapper(isShowing: $isPresenting, image: $image, completion: { _ in print("Image picked") })
   }
 }
+#endif

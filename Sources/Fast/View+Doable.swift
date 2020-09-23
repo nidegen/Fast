@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+#if os(iOS) // use available if compiling for macOS 11
 public struct DoableView<Content> : View where Content : View {
   let content: () -> Content
   
@@ -54,3 +55,4 @@ public struct DoableModifier: ViewModifier {
     }
   }
 }
+#endif

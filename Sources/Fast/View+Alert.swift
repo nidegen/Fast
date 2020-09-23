@@ -68,7 +68,7 @@ public class DestructiveAlert: BasicAlert {
 }
 
 public class DefaultAlert: BasicAlert {
-  public init(title: String, message: String, text: String, action: @escaping () -> ()) {
+  public init(title: String, message: String, text: String, action: @escaping () -> () = {}) {
     self.text = text
     self.action = action
     super.init(title: title, message: message)

@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+#if canImport(UIKit)
 public struct OptionalDatePicker: UIViewRepresentable {
   @Binding var date: Date?
   
@@ -96,3 +97,4 @@ public class DatePickerLabel: UILabel {
     resignFirstResponder()
   }
 }
+#endif

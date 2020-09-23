@@ -24,10 +24,19 @@ public extension Color {
     )
   }
   
+  #if canImport(UIKit)
   static var teal: Color {
     Color(UIColor.systemTeal)
   }
   static var indigo: Color {
     Color(UIColor.systemIndigo)
   }
+  #elseif canImport(AppKit)
+  static var teal: Color {
+    Color(NSColor.systemTeal)
+  }
+  static var indigo: Color {
+    Color(NSColor.systemIndigo)
+  }
+  #endif
 }

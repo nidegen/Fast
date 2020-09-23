@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-@available(iOS 13.0, macOS 11.0, tvOS 13.0, watchOS 6.0, *)
+#if os(iOS) // use available if compiling for macOS 11
 extension View {
   public func rowIcon(named: String, color: Color) -> some View {
     HStack {
@@ -18,7 +18,6 @@ extension View {
   }
 }
 
-@available(iOS 13.0, macOS 11.0, tvOS 13.0, watchOS 6.0, *)
 public struct RowIcon: View {
   var name: String
   var color: Color
@@ -34,3 +33,4 @@ public struct RowIcon: View {
     }
   }
 }
+#endif

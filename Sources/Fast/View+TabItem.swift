@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+#if os(iOS) // use available if compiling for macOS 11
 public extension View {
   func tabItem(_ title: String, withIcon iconName: String) -> some View {
     self.tabItem {
@@ -18,3 +19,4 @@ public extension View {
     }
   }
 }
+#endif

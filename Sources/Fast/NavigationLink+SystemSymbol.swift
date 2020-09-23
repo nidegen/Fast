@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-@available(iOS 13.0, macOS 11.0, tvOS 13.0, watchOS 6.0, *)
+#if os(iOS) // use available if compiling for macOS 11
 extension NavigationLink where Label == Image {
   public init(systemSymbol: String, destination: Destination) {
     self.init(destination: destination) {
@@ -16,3 +16,4 @@ extension NavigationLink where Label == Image {
     }
   }
 }
+#endif

@@ -1,18 +1,22 @@
 //
-//  PhotoPicker.swift
+//  PHPicker.swift
 //  Fast
 //
-//  Created by Nicolas Degen on 04.09.20.
+//  Created by Nicolas Degen on 08.09.20.
 //  Copyright © 2020 Nicolas Degen. All rights reserved.
 //
 
-import SwiftUI
 import PhotosUI
+import SwiftUI
 
-@available(iOS 14.0, macOS 11.0, tvOS 13.0, watchOS 6.0, macCatalyst 14, *)
-struct PhotoPicker: UIViewControllerRepresentable {
+#if canImport(UIKit)
+@available(iOS 14.0, *)
+struct PHPicker: UIViewControllerRepresentable {
   let configuration: PHPickerConfiguration
   @Binding var isPresented: Bool
+  
+  var completion: ([PHPickerResult])->()
+  
   func makeUIViewController(context: Context) -> PHPickerViewController {
     let controller = PHPickerViewController(configuration: configuration)
     controller.delegate = context.coordinator
@@ -26,14 +30,16 @@ struct PhotoPicker: UIViewControllerRepresentable {
   // Use a Coordinator to act as your PHPickerViewControllerDelegate
   class Coordinator: PHPickerViewControllerDelegate {
     
-    private let parent: PhotoPicker
+    private let parent: PHPicker
     
-    init(_ parent: PhotoPicker) {
+    init(_ parent: PHPicker) {
       self.parent = parent
     }
     func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
-      print(results)
-      parent.isPresented = false // Set isPresented to false because picking has finished.
+      parent.completion(results)
+      parent.isPresented = false
+      picker.dismiss(animated: true)
     }
   }
 }
+#endif
