@@ -28,7 +28,7 @@ public class ActionData: Identifiable  {
 
 public extension View {
   func actionSheet<T: ActionData>(_ data: Binding<T?>) -> some View {
-    self.actionSheet(item: data){ data in
+    self.actionSheet(item: data) { data in
       data.sheet
     }
   }
