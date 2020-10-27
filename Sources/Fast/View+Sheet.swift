@@ -12,6 +12,9 @@ import SwiftUI
 public struct SheetData: Identifiable  {
   public var id = UUID().uuidString
   public var view: () -> AnyView
+  public init(view: @escaping () -> AnyView) {
+    self.view = view
+  }
 }
 
 public extension View {
