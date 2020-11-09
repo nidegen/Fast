@@ -1,11 +1,3 @@
-//
-//  Color+Hex.swift
-//  Fast
-//
-//  Created by Nicolas Degen on 18.04.20.
-//  Copyright © 2020 Nicolas Degen. All rights reserved.
-//
-
 import SwiftUI
 
 public extension Color {

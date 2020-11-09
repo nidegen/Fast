@@ -1,11 +1,3 @@
-//
-//  ActivityView.swift
-//  Fast
-//
-//  Created by Nicolas Degen on 28.08.20.
-//  Copyright © 2020 Nicolas Degen. All rights reserved.
-//
-
 import Foundation
 #if canImport(UIKit)
   import UIKit
