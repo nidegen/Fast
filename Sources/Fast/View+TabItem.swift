@@ -8,8 +8,14 @@
 
 import SwiftUI
 
-#if os(iOS) // use available if compiling for macOS 11
+@available(iOS 13.0, macOS 11.0, tvOS 14.0, watchOS 7.0, macCatalyst 14, *)
 public extension View {
+  @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, macCatalyst 14, *)
+  func tabItem(_ title: LocalizedStringKey, withIcon iconName: String) -> some View {
+    self.tabItem { Label(title, systemImage: iconName) }
+  }
+  
+  @available(iOS, introduced: 13.0, obsoleted: 14.0)
   func tabItem(_ title: String, withIcon iconName: String) -> some View {
     self.tabItem {
       VStack {
@@ -19,4 +25,3 @@ public extension View {
     }
   }
 }
-#endif
