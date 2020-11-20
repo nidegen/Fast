@@ -1,6 +1,6 @@
 import Foundation
 
-extension Date {
+public extension Date {
   fileprivate static var formatter = DateFormatter()
   var timeStamp: String {
     let since = self.distance(to: Date())
