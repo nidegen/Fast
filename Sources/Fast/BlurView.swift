@@ -1,11 +1,3 @@
-//
-//  BlurView.swift
-//  Fast
-//
-//  Created by Nicolas Degen on 29.06.20.
-//  Copyright © 2020 Nicolas Degen. All rights reserved.
-//
-
 #if canImport(UIKit)
 import SwiftUI
 import UIKit

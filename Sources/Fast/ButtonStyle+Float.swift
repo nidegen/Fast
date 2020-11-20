@@ -1,13 +1,4 @@
-//
-//  ButtonStyle+Float.swift
-//  Fast
-//
-//  Created by Nicolas Degen on 11.07.20.
-//  Copyright © 2020 Nicolas Degen. All rights reserved.
-//
-
 import SwiftUI
-
 
 struct FloatStyle: ButtonStyle {
   var color: Color
