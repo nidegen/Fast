@@ -10,4 +10,8 @@ public extension Optional where Wrapped: SetAlgebra {
       self = n
     }
   }
+  
+  func contains(_ member: Wrapped.Element) -> Bool {
+    self?.contains(member) ?? false
+  }
 }

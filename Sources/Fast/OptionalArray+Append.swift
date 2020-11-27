@@ -9,3 +9,9 @@ public extension Optional where Wrapped: RangeReplaceableCollection {
     return self?.count ?? 0
   }
 }
+
+public extension Optional where Wrapped: RangeReplaceableCollection, Wrapped.Element: Equatable {
+  func contains(_ member: Wrapped.Element) -> Bool {
+    self?.contains(member) ?? false
+  }
+}
