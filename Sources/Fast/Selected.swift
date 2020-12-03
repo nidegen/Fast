@@ -1,14 +1,6 @@
-//
-//  Selected.swift
-//  Fast
-//
-//  Created by Nicolas Degen on 23.09.20.
-//  Copyright © 2020 Nicolas Degen. All rights reserved.
-//
-
 import SwiftUI
 
-#if os(iOS)
+@available(iOS 13.0, macOS 11.0, tvOS 14.0, watchOS 7.0, macCatalyst 14, *)
 public struct SelectedModifier: ViewModifier {
   var selected: Bool
   
@@ -36,13 +28,15 @@ public struct SelectedModifier: ViewModifier {
 }
 
 extension View {
+  @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, macCatalyst 14, *)
+
   public func selected(_ selected: Bool) -> some View {
     self.modifier(SelectedModifier(selected: selected))
   }
 }
 
-@available(iOS 14.0, macCatalyst 14, *)
-struct Selectable_Previews: PreviewProvider {
+@available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, macCatalyst 14, *)
+struct Selected_Previews: PreviewProvider {
   static var previews: some View {
     Form {
       List {
@@ -75,4 +69,3 @@ struct Selectable_Previews: PreviewProvider {
     }
   }
 }
-#endif
