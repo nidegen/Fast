@@ -23,7 +23,28 @@ public extension Color {
   static var indigo: Color {
     Color(UIColor.systemIndigo)
   }
+  static var lightGray: Color {
+    Color(UIColor.lightGray)
+  }
+  static var systemGray: Color {
+    Color(UIColor.systemGray)
+  }
+  static var systemGray2: Color {
+    Color(UIColor.systemGray2)
+  }
+  static var systemGray3: Color {
+    Color(UIColor.systemGray3)
+  }
+  static var systemGray4: Color {
+    Color(UIColor.systemGray4)
+  }
+  static var systemGray5: Color {
+    Color(UIColor.systemGray5)
+  }
   #elseif canImport(AppKit)
+  static var lightGray: Color {
+    Color(NSColor.lightGray)
+  }
   static var teal: Color {
     Color(NSColor.systemTeal)
   }

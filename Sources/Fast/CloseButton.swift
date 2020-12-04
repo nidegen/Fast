@@ -55,7 +55,7 @@ public struct CloseButtonOverlay: ViewModifier {
 }
 
 @available(iOS 13.0, macOS 11.0, tvOS 14.0, watchOS 7.0, macCatalyst 14, *)
-struct SwiftUIView_Previews: PreviewProvider {
+struct CloseButton_Previews: PreviewProvider {
   @State static var text = "Blablabla"
   static var previews: some View {
     VStack {

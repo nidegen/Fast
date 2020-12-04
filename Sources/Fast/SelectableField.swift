@@ -3,14 +3,17 @@ import SwiftUI
 @available(iOS 13.0, macOS 11.0, tvOS 14.0, watchOS 7.0, macCatalyst 14, *)
 public struct SelectableField: ViewModifier {
   var selected: Bool
-  var background = Color
-    .gray.opacity(0.2)
+  var background: Color = Color
+    .systemGray5
   public func body(content: Content) -> some View {
     Group {
       if selected {
         content
           .background(
-            background.cornerRadius(10))
+            background
+              .cornerRadius(10)
+              .shadow(radius: 8)
+          )
           .overlay(
             RoundedRectangle(cornerRadius: 10)
               .stroke(Color.blue, lineWidth: 3)
@@ -18,7 +21,10 @@ public struct SelectableField: ViewModifier {
       } else {
           content
             .background(
-              background.cornerRadius(10))
+              background
+                .cornerRadius(10)
+                .shadow(radius: 5)
+            )
       }
     }
     .overlay(
@@ -36,14 +42,15 @@ public struct SelectableField: ViewModifier {
         Spacer()
       }
       .padding([.top, .trailing], 5))
-    .padding(2)
+    .padding(1.5)
   }
 }
 
 @available(iOS 13.0, macOS 11.0, tvOS 14.0, watchOS 7.0, macCatalyst 14, *)
 extension View {
-  public func selectedField(_ selected: Bool) -> some View {
-    self.modifier(SelectableField(selected: selected))
+  public func selectedField(_ selected: Bool, background: Color = Color
+                              .systemGray5) -> some View {
+    self.modifier(SelectableField(selected: selected, background: background))
   }
 }
 
