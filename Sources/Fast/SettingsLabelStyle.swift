@@ -36,7 +36,7 @@ public struct SettingsIconModifier: ViewModifier {
   
   public func body(content: Content) -> some View {
     content
-      .imageScale(.medium)
+      .imageScale(imageScale)
       .foregroundColor(.white)
       .background(
         RoundedRectangle(cornerRadius: 7 * scale)
