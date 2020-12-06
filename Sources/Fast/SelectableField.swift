@@ -12,7 +12,7 @@ public struct SelectableField: ViewModifier {
           .background(
             background
               .cornerRadius(10)
-              .shadow(radius: 8)
+              .shadow(color: .blue, radius: 2)
           )
           .overlay(
             RoundedRectangle(cornerRadius: 10)
@@ -23,7 +23,7 @@ public struct SelectableField: ViewModifier {
             .background(
               background
                 .cornerRadius(10)
-                .shadow(radius: 5)
+                .shadow(radius: 6, y: 2)
             )
       }
     }
@@ -56,8 +56,9 @@ extension View {
 
 @available(iOS 13.0, macOS 11.0, tvOS 14.0, watchOS 7.0, macCatalyst 14, *)
 struct SelectableField_Previews: PreviewProvider {
-  @State static var selected = true
+  @State static var selected = false
   static var previews: some View {
+    VStack {
     HStack {
       Spacer()
     }
@@ -67,5 +68,15 @@ struct SelectableField_Previews: PreviewProvider {
     }
     .selectedField(selected)
     .padding()
+      HStack {
+        Spacer()
+      }
+      .padding()
+      .onTapGesture {
+        selected.toggle()
+      }
+      .selectedField(!selected)
+      .padding()
+    }
   }
 }
