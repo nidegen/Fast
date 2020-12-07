@@ -1,10 +1,3 @@
-//
-//  DateTests.swift
-//  Fast
-//
-//  Created by Nicolas Degen on 31.05.20.
-//
-
 import XCTest
 @testable import Fast
 
