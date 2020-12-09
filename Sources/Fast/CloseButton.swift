@@ -2,6 +2,10 @@ import SwiftUI
 
 @available(iOS 13.0, macOS 11.0, tvOS 14.0, watchOS 7.0, macCatalyst 14, *)
 public struct CloseButton: View {
+  public init(action: @escaping () -> ()) {
+    self.action = action
+  }
+  
   @Environment(\.colorScheme) var colorscheme
   public var action: ()->()
   
@@ -37,6 +41,7 @@ public struct CloseButton: View {
   }
 }
 
+@available(iOS 13.0, macOS 11.0, tvOS 14.0, watchOS 7.0, macCatalyst 14, *)
 public struct CloseButtonOverlay: ViewModifier {
   public var action: ()->()
   public func body(content: Content) -> some View {

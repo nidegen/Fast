@@ -3,8 +3,7 @@ import SwiftUI
 @available(iOS 13.0, macOS 11.0, tvOS 14.0, watchOS 7.0, macCatalyst 14, *)
 public struct SelectableField: ViewModifier {
   var selected: Bool
-  var background: Color = Color
-    .systemGray5
+  var background: Color = .systemGray5
   public func body(content: Content) -> some View {
     Group {
       if selected {

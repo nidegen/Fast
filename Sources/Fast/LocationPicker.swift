@@ -1,7 +1,7 @@
 import SwiftUI
 import MapKit
 
-@available(iOS 14.0, *)
+@available(iOS 14.0, macOS 11.0, *)
 struct LocationPicker: View {
   @State var region = MKCoordinateRegion(center: CLLocationCoordinate2D.init(latitude: 47, longitude: 8), latitudinalMeters: 1000, longitudinalMeters: 1000)
   var body: some View {
@@ -17,7 +17,7 @@ struct LocationPicker: View {
   }
 }
 
-@available(iOS 14.0, *)
+@available(iOS 14.0, macOS 11.0, *)
 struct LocationPicker_Previews: PreviewProvider {
   static var previews: some View {
     LocationPicker()

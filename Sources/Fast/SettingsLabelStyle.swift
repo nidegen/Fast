@@ -23,6 +23,7 @@ public struct SettingsLabelStyle: LabelStyle {
   }
 }
 
+@available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, macCatalyst 14, *)
 public struct SettingsIconModifier: ViewModifier {
   public var color: Color
   public var scale: CGFloat
@@ -46,6 +47,7 @@ public struct SettingsIconModifier: ViewModifier {
   }
 }
 
+@available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, macCatalyst 14, *)
 public extension View {
   func settingsIcon(color: Color = .blue, scale: CGFloat = 1, imageScale: Image.Scale = .medium) -> some View {
     modifier(SettingsIconModifier(color: color, scale: scale, imageScale: imageScale))
