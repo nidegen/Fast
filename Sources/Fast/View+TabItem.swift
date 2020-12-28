@@ -14,14 +14,4 @@ public extension View {
   func tabItem(_ title: LocalizedStringKey, withIcon iconName: String) -> some View {
     self.tabItem { Label(title, systemImage: iconName) }
   }
-  
-  @available(iOS, introduced: 13.0, obsoleted: 14.0)
-  func tabItem(_ title: String, withIcon iconName: String) -> some View {
-    self.tabItem {
-      VStack {
-        Image(systemName: iconName)
-        Text(title)
-      }
-    }
-  }
 }

@@ -60,6 +60,9 @@ public extension Color {
   static var systemGray5: Color {
     Color(UIColor.systemGray5)
   }
+  static var systemBackground: Color {
+    Color(UIColor.systemBackground)
+  }
   #elseif canImport(AppKit)
   static var lightGray: Color {
     Color(NSColor.lightGray)
