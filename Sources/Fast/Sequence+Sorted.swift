@@ -6,4 +6,10 @@ public extension Sequence {
       return a[keyPath: keyPath] < b[keyPath: keyPath]
     }
   }
+  
+  func mapped<T: Comparable>(by keyPath: KeyPath<Element, T>) -> [T] {
+    return compactMap { element in
+      return element[keyPath: keyPath]
+    }
+  }
 }
