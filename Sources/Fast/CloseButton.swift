@@ -45,16 +45,10 @@ public struct CloseButton: View {
 public struct CloseButtonOverlay: ViewModifier {
   public var action: ()->()
   public func body(content: Content) -> some View {
-    ZStack {
+    ZStack(alignment: .topTrailing) {
       content
-      VStack {
-        HStack {
-          Spacer()
-          CloseButton(action: action)
-            .padding()
-        }
-        Spacer()
-      }
+      CloseButton(action: action)
+        .padding()
     }
   }
 }
@@ -73,6 +67,6 @@ struct CloseButton_Previews: PreviewProvider {
     }
     .background(Color(UIColor.systemBackground))
     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
-//    .environment(\.colorScheme, .dark)
+    //    .environment(\.colorScheme, .dark)
   }
 }

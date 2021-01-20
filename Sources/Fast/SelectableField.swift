@@ -4,6 +4,7 @@ import SwiftUI
 public struct SelectableField: ViewModifier {
   var selected: Bool
   var background: Color = .systemGray5
+  
   public func body(content: Content) -> some View {
     Group {
       if selected {
@@ -26,21 +27,8 @@ public struct SelectableField: ViewModifier {
             )
       }
     }
-    .overlay(
-      VStack {
-        HStack {
-          Spacer()
-          if selected {
-            Image(systemName: "checkmark.circle.fill")
-              .foregroundColor(.blue)
-          } else {
-            Image(systemName: "circle")
-              .foregroundColor(.gray)
-          }
-        }
-        Spacer()
-      }
-      .padding([.top, .trailing], 5))
+    .overlay(SelectionMark(selected: selected).padding(5),
+             alignment: .topTrailing)
     .padding(1.5)
   }
 }
