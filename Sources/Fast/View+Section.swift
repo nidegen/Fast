@@ -1,11 +1,3 @@
-//
-//  View+Section.swift
-//  Fast
-//
-//  Created by Nicolas Degen on 28.03.20.
-//  Copyright © 2019 Nicolas Degen. All rights reserved.
-//
-
 import SwiftUI
 
 public extension View {
