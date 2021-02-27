@@ -1,7 +1,6 @@
 import XCTest
 @testable import Fast
 
-
 final class DateTests: XCTestCase {
   
   func testLast()  {

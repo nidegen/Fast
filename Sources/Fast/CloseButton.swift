@@ -1,6 +1,7 @@
 import SwiftUI
 
-@available(iOS 13.0, macOS 11.0, tvOS 14.0, watchOS 7.0, macCatalyst 14, *)
+#if canImport(UIKit)
+@available(iOS 13.0, tvOS 14.0, watchOS 7.0, macCatalyst 14, *)
 public struct CloseButton: View {
   public init(action: @escaping () -> ()) {
     self.action = action
@@ -53,7 +54,7 @@ public struct CloseButtonOverlay: ViewModifier {
   }
 }
 
-@available(iOS 13.0, macOS 11.0, tvOS 14.0, watchOS 7.0, macCatalyst 14, *)
+@available(iOS 13.0, watchOS 7.0, macCatalyst 14, *)
 struct CloseButton_Previews: PreviewProvider {
   @State static var text = "Blablabla"
   static var previews: some View {
@@ -70,3 +71,4 @@ struct CloseButton_Previews: PreviewProvider {
     //    .environment(\.colorScheme, .dark)
   }
 }
+#endif

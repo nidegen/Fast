@@ -1,5 +1,6 @@
 import SwiftUI
 
+#if canImport(UIKit)
 @available(iOS 13.0, macOS 11.0, tvOS 14.0, watchOS 7.0, macCatalyst 14, *)
 public struct SelectableField: ViewModifier {
   var selected: Bool
@@ -67,3 +68,4 @@ struct SelectableField_Previews: PreviewProvider {
     }
   }
 }
+#endif
