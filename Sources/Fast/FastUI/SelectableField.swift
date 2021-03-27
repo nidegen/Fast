@@ -20,12 +20,12 @@ public struct SelectableField: ViewModifier {
               .stroke(Color.blue, lineWidth: 3)
           )
       } else {
-          content
-            .background(
-              background
-                .cornerRadius(10)
-                .shadow(radius: 6, y: 2)
-            )
+        content
+          .background(
+            background
+              .cornerRadius(10)
+              .shadow(radius: 6, y: 2)
+          )
       }
     }
     .overlay(SelectionMark(selected: selected).padding(5),
@@ -47,15 +47,15 @@ struct SelectableField_Previews: PreviewProvider {
   @State static var selected = false
   static var previews: some View {
     VStack {
-    HStack {
-      Spacer()
-    }
-    .padding()
-    .onTapGesture {
-      selected.toggle()
-    }
-    .selectedField(selected)
-    .padding()
+      HStack {
+        Spacer()
+      }
+      .padding()
+      .onTapGesture {
+        selected.toggle()
+      }
+      .selectedField(selected)
+      .padding()
       HStack {
         Spacer()
       }

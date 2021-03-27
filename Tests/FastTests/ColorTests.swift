@@ -5,21 +5,32 @@ import SwiftUI
 @available(iOS 14.0, *)
 final class ColorTests: XCTestCase {
   
-  func testInt()  {
+  func testIntRGB()  {
     let red = Color(hex256: 0xff0000)
-    XCTAssertEqual(red.hexString, "#FF0000FF")
+    XCTAssertEqual(red.cgColor?.rgb256hex, "#FF0000")
+  }
+  
+  func testIntRGBA()  {
+    let red = Color(hex256rgba: 0xff0000ff)
+    XCTAssertEqual(red.cgColor?.rgba256hex, "#FF0000FF")
+  }
+  
+  func testIntRGBACGColor()  {
+    let red = CGColor.hex256argb(0xff0000ff)
+    XCTAssertEqual(red.rgba256hex, "#0000FFFF")
+    XCTAssertEqual(red.argb256hex, 0xFF0000FF)
   }
   
   func testHexRGB()  {
     let redRGB = "#FF0000"
     let red = Color(rgb: redRGB)
-    XCTAssertEqual(red.hexStringRGB, redRGB)
+    XCTAssertEqual(red?.cgColor?.rgb256hex, redRGB)
   }
   
   func testHexRGBA()  {
     let redRGBA = "#FF0000FF"
     let red = Color(rgba: redRGBA)
-    XCTAssertEqual(red.hexString, redRGBA)
+    XCTAssertEqual(red?.cgColor?.rgba256hex, redRGBA)
   }
   
   func testStepper()  {
