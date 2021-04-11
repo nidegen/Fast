@@ -47,12 +47,44 @@ public extension Color {
     )
   }
   
+  init(hex256argb hex: Int) {
+    let components = (
+      A: Double((hex >> 24) & 0xff) / 255,
+      R: Double((hex >> 16) & 0xff) / 255,
+      G: Double((hex >> 08) & 0xff) / 255,
+      B: Double((hex >> 00) & 0xff) / 255
+    )
+    self.init(
+      .sRGB,
+      red: components.R,
+      green: components.G,
+      blue: components.B,
+      opacity: components.A
+    )
+  }
+  
   init(hex16rgba hex: Int) {
     let components = (
       R: Double((hex >> 12) & 0xf) / 15,
       G: Double((hex >> 08) & 0xf) / 15,
       B: Double((hex >> 04) & 0xf) / 15,
       A: Double((hex >> 00) & 0xf) / 15
+    )
+    self.init(
+      .sRGB,
+      red: components.R,
+      green: components.G,
+      blue: components.B,
+      opacity: components.A
+    )
+  }
+  
+  init(hex16argb hex: Int) {
+    let components = (
+      A: Double((hex >> 12) & 0xf) / 15,
+      R: Double((hex >> 08) & 0xf) / 15,
+      G: Double((hex >> 04) & 0xf) / 15,
+      B: Double((hex >> 00) & 0xf) / 15
     )
     self.init(
       .sRGB,

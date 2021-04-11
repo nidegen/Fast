@@ -39,4 +39,27 @@ private extension BlurView {
     return view
   }
 }
+
+public extension View {
+  func blur(_ style: UIBlurEffect.Style) -> some View {
+    background(BlurView(style: style))
+  }
+}
+
+struct Blur_Previews: PreviewProvider {
+  static var previews: some View {
+    VStack {
+      Text("No Blur")
+      Spacer()
+      Text("VM Blur")
+        .blur(.extraLight)
+      Spacer()
+      Text("Blur")
+        .padding()
+        .blur(.light)
+        .cornerRadius(3.0)
+    }
+    .padding()
+  }
+}
 #endif

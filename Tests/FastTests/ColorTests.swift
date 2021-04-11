@@ -15,10 +15,15 @@ final class ColorTests: XCTestCase {
     XCTAssertEqual(red.cgColor?.rgba256hex, "#FF0000FF")
   }
   
-  func testIntRGBACGColor()  {
-    let red = CGColor.hex256argb(0xff0000ff)
-    XCTAssertEqual(red.rgba256hex, "#0000FFFF")
-    XCTAssertEqual(red.argb256hex, 0xFF0000FF)
+  func testIntARG()  {
+    let blue = Color(hex256argb: 0xff0000ff)
+    XCTAssertEqual(blue.cgColor?.rgba256hex, "#0000FFFF")
+  }
+  
+  func testIntCGColor()  {
+    let blue = CGColor.hex256argb(0xff0000ff)
+    XCTAssertEqual(blue.rgba256hex, "#0000FFFF")
+    XCTAssertEqual(blue.argb256hex, 0xFF0000FF)
   }
   
   func testHexRGB()  {
