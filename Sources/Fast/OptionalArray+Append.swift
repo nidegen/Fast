@@ -25,7 +25,7 @@ public extension Optional where Wrapped: RangeReplaceableCollection, Wrapped.Ele
 }
 
 public extension RangeReplaceableCollection where Element: Equatable {
-  mutating func remove(_ elemnt: Element) {
-    self = self.filter {  $0 != elemnt }
+  mutating func remove(_ element: Element) {
+    self = self.filter {  $0 != element }
   }
 }
